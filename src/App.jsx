@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Slider from './components/Slider';
 import Babyad from './components/Babyad';
+import Service from './components/Features';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
 
         {/* Babyad component */}
         <Babyad />
+
+        {/* services component */}
+        <Service />
         
       </div>
     </Router>

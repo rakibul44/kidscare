@@ -12,9 +12,12 @@ const Babyad = () => {
   ];
 
   return (
-    <div className="bg-green-500 flex flex-col md:flex-row justify-between items-center px-6 py-8 md:px-12 md:py-16">
+    <div className="relative bg-green-500 flex flex-col md:flex-row justify-between items-center px-6 py-8 md:px-12 md:py-16">
+      {/* Fade shadow at the top */}
+      <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-gray-300 to-transparent z-10"></div>
+
       {ads.map((ad) => (
-        <div key={ad.id} className="flex flex-col md:flex-row justify-between items-center w-full gap-4">
+        <div key={ad.id} className="container flex flex-col md:flex-row justify-between items-center w-full gap-4">
           {/* Text Section */}
           <div className="text-white font-semibold text-lg md:text-xl lg:text-2xl text-center md:text-left">
             {ad.text.split(", ").map((line, index) => (
