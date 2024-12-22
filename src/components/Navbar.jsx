@@ -28,8 +28,8 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="container bg-white shadow-sm">
-      <div className="mx-auto px-4 flex justify-between items-center py-4">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4 flex justify-between items-center py-4">
         {/* Logo */}
         <div className="text-2xl font-bold text-red-500">Kids Care</div>
 
@@ -40,7 +40,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-black font-medium px-4 py-2 rounded hover:bg-red-500 ${
+                className={`text-black font-medium px-4 py-2 rounded hover:bg-red-500 transition-colors duration-300 ${
                   isActive(link.path) ? 'bg-red-500 text-white' : ''
                 }`}
               >
@@ -48,15 +48,15 @@ const Navbar = () => {
               </Link>
             ) : (
               <div key={link.name} className="relative group">
-                <button className="text-black font-medium px-4 py-2 rounded hover:bg-red-500">
+                <button className="text-black font-medium px-4 py-2 rounded hover:bg-red-500 transition-colors duration-300">
                   {link.name}
                 </button>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg py-2">
+                <div className="absolute hidden group-hover:block bg-white shadow-lg py-2 rounded-md">
                   {link.dropdown.map((item) => (
                     <Link
                       key={item.name}
                       to={item.path}
-                      className={`block px-4 py-2 text-black rounded hover:bg-red-500 ${
+                      className={`block px-4 py-2 text-black rounded hover:bg-red-500 transition-colors duration-300 ${
                         isActive(item.path) ? 'bg-red-500 text-white' : ''
                       }`}
                     >
@@ -119,7 +119,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`block px-4 py-2 text-black rounded hover:bg-gray-100 ${
+                className={`block px-4 py-2 text-black rounded hover:bg-gray-100 transition-colors duration-300 ${
                   isActive(link.path) ? 'bg-red-500 text-white' : ''
                 }`}
               >
@@ -135,7 +135,7 @@ const Navbar = () => {
                     <Link
                       key={item.name}
                       to={item.path}
-                      className={`block px-4 py-2 text-black rounded hover:bg-gray-100 ${
+                      className={`block px-4 py-2 text-black rounded hover:bg-gray-100 transition-colors duration-300 ${
                         isActive(item.path) ? 'bg-red-500 text-white' : ''
                       }`}
                     >
